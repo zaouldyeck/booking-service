@@ -3,9 +3,9 @@ package handlers
 import (
 	"net/http"
 
-	"github.com/zaouldyeck/simple-web-service/pkg/config"
-	"github.com/zaouldyeck/simple-web-service/pkg/models"
-	"github.com/zaouldyeck/simple-web-service/pkg/render"
+	"github.com/zaouldyeck/booking-service/pkg/config"
+	"github.com/zaouldyeck/booking-service/pkg/models"
+	"github.com/zaouldyeck/booking-service/pkg/render"
 )
 
 // Repo is the repository used by the handlers.
