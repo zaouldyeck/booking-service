@@ -16,11 +16,19 @@ func routes(app *config.AppConfig) http.Handler {
 	mux.Use(NoSurf)
 	mux.Use(SessionLoad)
 
+	// This creates a file server that serves files out of the "./static" directory
+	fileServer := http.FileServer(http.Dir("./static/"))
+
+	// This tells the application's router to handle all requests starting with "/static/"
+	// by stripping "/static" from the URL and passing it to the file server.
+	mux.Handle("/static/*", http.StripPrefix("/static", fileServer))
+
 	mux.Get("/", handlers.Repo.Home)
 	mux.Get("/about", handlers.Repo.About)
 	mux.Get("/generals-quarters", handlers.Repo.Generals)
 	mux.Get("/majors-suite", handlers.Repo.Majors)
 	mux.Get("/search-availability", handlers.Repo.Availability)
+	mux.Get("/contact", handlers.Repo.Contact)
 
 	return mux
 }
