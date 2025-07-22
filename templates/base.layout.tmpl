@@ -57,7 +57,7 @@
 
 	{{end}}
 	
-		<div class="row my-footer">
+	<div class="row my-footer">
 		<div class="col">
 			left
 		</div>
@@ -82,6 +82,7 @@
 	{{block "js" .}}
 		
 	{{end}}
+
 	
 	<script>
 		let attention = Prompt();
@@ -104,31 +105,6 @@
 			}, false)
 		  })
 		})()
-
-		document.getElementById("colorButton").addEventListener("click", function(){
-			let html = `
-			<form id="check-availability-form" action="" method="post" novalidate class="needs-validation">
-				<div class="row g-3 mb-4">
-					<div class="col">
-						<div class="row g-3" id="reservation-dates-modal">
-							<div class="col">		
-								<input disabled required class="form-control" type="text" name="start" id="start" placeholder="Arrival">
-							</div>
-							<div class="col">
-								<input disabled required class="form-control" type="text" name="end" id="end" placeholder="Departure">  
-							</div>
-						</div>
-					</div>		
-				</div>
-			</form>
-		`	
-			attention.custom({msg: html, title: "Choose your dates"});
-		})
-
-		const elem = document.getElementById('reservation-dates');
-		const rangepicker = new DateRangePicker(elem, {
-		  format: "yyyy-mm-dd",
-		});
 
 		function notify(msg, msgType) {
 			notie.alert({
