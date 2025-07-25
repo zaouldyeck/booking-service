@@ -3,12 +3,11 @@ package handlers
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/zaouldyeck/booking-service/internal/config"
+	"github.com/zaouldyeck/booking-service/internal/models"
+	"github.com/zaouldyeck/booking-service/internal/render"
 	"log"
 	"net/http"
-
-	"github.com/zaouldyeck/booking-service/pkg/config"
-	"github.com/zaouldyeck/booking-service/pkg/models"
-	"github.com/zaouldyeck/booking-service/pkg/render"
 )
 
 // Repo is the repository used by the handlers.

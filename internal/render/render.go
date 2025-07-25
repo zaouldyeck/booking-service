@@ -2,14 +2,14 @@ package render
 
 import (
 	"bytes"
+	"github.com/zaouldyeck/booking-service/internal/config"
+	"github.com/zaouldyeck/booking-service/internal/models"
 	"html/template"
 	"log"
 	"net/http"
 	"path/filepath"
 
 	"github.com/justinas/nosurf"
-	"github.com/zaouldyeck/booking-service/pkg/config"
-	"github.com/zaouldyeck/booking-service/pkg/models"
 )
 
 var app *config.AppConfig

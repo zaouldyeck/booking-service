@@ -2,14 +2,14 @@ package main
 
 import (
 	"fmt"
+	"github.com/zaouldyeck/booking-service/internal/config"
+	"github.com/zaouldyeck/booking-service/internal/handlers"
+	"github.com/zaouldyeck/booking-service/internal/render"
 	"log"
 	"net/http"
 	"time"
 
 	"github.com/alexedwards/scs/v2"
-	"github.com/zaouldyeck/booking-service/pkg/config"
-	"github.com/zaouldyeck/booking-service/pkg/handlers"
-	"github.com/zaouldyeck/booking-service/pkg/render"
 )
 
 const portNumber = ":8080"
