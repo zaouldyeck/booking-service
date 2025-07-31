@@ -1,9 +1,11 @@
 package main
 
 import (
+	"encoding/gob"
 	"fmt"
 	"github.com/zaouldyeck/booking-service/internal/config"
 	"github.com/zaouldyeck/booking-service/internal/handlers"
+	"github.com/zaouldyeck/booking-service/internal/models"
 	"github.com/zaouldyeck/booking-service/internal/render"
 	"log"
 	"net/http"
@@ -18,6 +20,9 @@ var app config.AppConfig
 var session *scs.SessionManager
 
 func main() {
+	// What types to store in the session.
+	gob.Register(models.Reservation{})
+
 	// Change this to true when in production.
 	app.InProduction = false
 
